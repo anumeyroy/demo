@@ -1,0 +1,23 @@
+{
+  "name": "school",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config src/index.js"
+  },
+  "author": "anumey roy",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.10.1"
+  },
+  "devDependencies": {
+    "chalk": "^5.4.1",
+    "eslint": "^9.20.1",
+    "prettier": "^3.5.1"
+  }
+}
