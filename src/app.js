@@ -4,13 +4,12 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 
-app,
-  use(
-    cors({
-      origin: process.env.CORS_ORIGION,
-      credentials: true,
-    })
-  );
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGION,
+    credentials: true,
+  })
+);
 
 app.use(
   express.json({
@@ -18,8 +17,15 @@ app.use(
   })
 );
 app.use(express.urlencoded({ extended: true, limit: '16kb' }));
-
 app.use(express.static('public'));
+app.use(cookieParser());
 
-supportsColor.use(cookieParser());
+//router import
+
+import userRouter from './routes/user.routs.js';
+
+//routs declearation
+
+app.use('/api/v1/users', userRouter);
+
 export { app };

@@ -3,9 +3,11 @@ import express from 'express';
 // import cluster from 'node:cluster';
 import chalk from 'chalk';
 import connectMongoDB from './db/connectdb.js';
+import { app } from './app.js';
 
-const app = express();
-dotEnv.config();
+dotEnv.config({
+  path: './.env',
+});
 
 const port = process.env.PORT || 3000;
 
